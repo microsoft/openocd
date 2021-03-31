@@ -18,6 +18,10 @@ else
 %C%_openocd_LDADD += -ljim
 endif
 
+if ALL_STATIC
+%C%_openocd_LDFLAGS = -all-static
+endif
+
 %C%_libopenocd_la_CPPFLAGS =
 
 # banner output includes RELSTR appended to $VERSION from the configure script

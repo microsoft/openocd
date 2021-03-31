@@ -41,8 +41,10 @@ if head=`git rev-parse --verify --short HEAD 2>/dev/null`; then
 	[ -w . ] && git update-index --refresh --unmerged > /dev/null
 
 	# Check for uncommitted changes
-	if git diff-index --name-only HEAD | grep -v "^scripts/package" \
-	    | read dummy; then
+	# If jimtcl bootstraps during configuration it can leave untracked files.
+	if git diff-index --name-only --ignore-submodules=untracked HEAD \
+		| grep -v "^scripts/package" \
+		| read dummy; then
 		printf '%s' -dirty
 	fi
 

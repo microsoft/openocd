@@ -257,6 +257,10 @@ AC_ARG_ADAPTERS([
   LIBJAYLINK_ADAPTERS
   ],[auto])
 
+AC_ARG_ENABLE([all_static],
+  AS_HELP_STRING([--enable-all-static], [Enable building executables with static linking.]),
+  [build_all_static=$enableval], [build_all_static=no])
+
 AC_ARG_ENABLE([parport],
   AS_HELP_STRING([--enable-parport], [Enable building the pc parallel port driver]),
   [build_parport=$enableval], [build_parport=no])
@@ -761,6 +765,7 @@ AS_IF([test "x$enable_presto" != "xno"], [
   build_bitq=yes
 ])
 
+AM_CONDITIONAL([ALL_STATIC], [test "x$build_all_static" = "xyes"])
 AM_CONDITIONAL([RELEASE], [test "x$build_release" = "xyes"])
 AM_CONDITIONAL([PARPORT], [test "x$build_parport" = "xyes"])
 AM_CONDITIONAL([DUMMY], [test "x$build_dummy" = "xyes"])

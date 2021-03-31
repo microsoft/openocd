@@ -50,7 +50,7 @@
 
 #ifdef PKGBLDDATE
 #define OPENOCD_VERSION	\
-	"Open On-Chip Debugger " VERSION RELSTR " (" PKGBLDDATE ")"
+	"Open On-Chip Debugger " VERSION RELSTR " (" PKGBLDDATE ") [https://github.com/microsoft/openocd]"
 #else
 #define OPENOCD_VERSION	\
 	"Open On-Chip Debugger " VERSION RELSTR
