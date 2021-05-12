@@ -14,6 +14,12 @@ fork incorporates changes from
 Sphere](https://thirdpartysource.microsoft.com/) to improve compatibility with
 the embedded development ecosystem.
 
+This project has adopted the [Microsoft Open Source Code of Conduct](
+https://opensource.microsoft.com/codeofconduct/). For more information see the
+[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any
+additional questions or comments.
+
 ## Branching strategy
 
 The `master` branch mirrors `master` in the upstream repository and is updated
@@ -26,7 +32,9 @@ After every upstream tagged OpenOCD release, a new branch of the form
 from the Raspberry Pi, STMicroelectronics, and Azure Sphere forks will be
 applied to this new branch. After validating the build, the tip of the branch
 will be tagged as `ms-v<version>` and added as a
-[release](https://github.com/microsoft/openocd/releases). Vendor patches are not
-applied directly to `microsoft/main` because OpenOCD does not release frequently
-and this provides more flexibility to adjust the set of applied vendor patches
-in future releases.
+[release](https://github.com/microsoft/openocd/releases). Because OpenOCD
+releases are infrequent, it's more likely that the vendor forks and OpenOCD
+itself will have significant changes in the time between releases. Patches are
+are not applied directly to `microsoft/main` to avoid merge conflicts from stale
+vendor fork changes. Vendors are also encouraged to contribute their changes to
+upstream OpenOCD to avoid the need for patches at all.
