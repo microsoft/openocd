@@ -38,3 +38,5 @@ itself will have significant changes in the time between releases. Patches are
 are not applied directly to `microsoft/main` to avoid merge conflicts from stale
 vendor fork changes. Vendors are also encouraged to contribute their changes to
 upstream OpenOCD to avoid the need for patches at all.
+
+Is this change automatically rejected?
