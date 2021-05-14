@@ -1,0 +1,22 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the GPL-2.0-only license.
+
+on:
+  pull_request_target:
+    types: [opened]
+
+name: Close Pull Request
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: superbrothers/close-pull-request@v3.1.0
+      with:
+        comment: >-
+          **Public pull requests are not accepted to this repo.** If you would
+          like to contribute changes to OpenOCD, please contribute directly to
+          upstream following the [OpenOCD Developer's Guide](
+          http://openocd.org/doc/doxygen/html/index.html).
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
